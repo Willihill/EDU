@@ -1,0 +1,16 @@
+.container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .icon {
+    color: var(--purple);
+    font-size: 80px;
+    margin-bottom: 10px;
+  }
+
+  .title {
+    color: var(--purple);
+    font-size: 20px;
+  }
+}

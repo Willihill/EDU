@@ -1,0 +1,52 @@
+.container {
+  flex-direction: row;
+  position: relative;
+
+  &[arial-excluding='true'] {
+    .action {
+      opacity: .2;
+    }
+  }
+
+  .action {
+    background-color: var(--white);
+    margin-right: 10px;
+    padding: 6px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, .1);
+    }
+
+    .edit {
+      color: var(--blue-dark);
+      font-size: 18px;
+    }
+
+    .eyeOff {
+      color: var(--orange);
+      font-size: 20px;
+    }
+
+    .remove {
+      color: var(--red);
+      font-size: 18px;
+    }
+  }
+
+  .loading {
+    flex: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+
+    > div {
+      box-shadow: 0 0 50px var(--black);
+    }
+  }
+}

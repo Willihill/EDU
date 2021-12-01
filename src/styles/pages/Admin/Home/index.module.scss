@@ -1,0 +1,28 @@
+.container {
+  flex: 1;
+  justify-content: center;
+  padding: 80px 0;
+  
+  .content {
+    flex-direction: column;
+    gap: 20px;
+
+    .amounts {
+      flex-direction: row;
+      gap: 30px;
+    }
+
+    .classRooms {
+      flex: 1;
+      flex-direction: column;
+      background-color: var(--background);
+      padding: 20px 30px;
+      border-radius: 10px;
+      gap: 20px;
+
+      .title {
+        color: var(--purple);
+      }
+    }
+  }
+}

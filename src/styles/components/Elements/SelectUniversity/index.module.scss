@@ -1,0 +1,16 @@
+.container {
+  flex-direction: column;
+  padding: 30px 50px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .3);
+
+  .universities {
+    flex-direction: row;
+    padding: 10px 20px;
+    overflow: hidden auto;
+    margin-top: 20px;
+  }
+}

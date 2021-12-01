@@ -1,0 +1,56 @@
+.container {
+  flex: 1;
+  flex-direction: column;
+  overflow: hidden;
+
+  .content {
+    flex: 1;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+
+    .refresh {
+      position: absolute;
+      top: 5px;
+      left: 0;
+      right: 0;
+    }
+
+    .contentScroll {
+      position: absolute;
+      width: auto;
+      top: 20px;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      overflow: auto;
+    }
+  }
+
+  /***************************
+  ***** Styles of Themes *****/
+
+  /* White */
+  &[arial-theme='ContainerFetchThemeWhite'] {
+    .content {
+      background-color: var(--white);
+    }
+  }
+
+  /* Blue Dark */
+  &[arial-theme='ContainerFetchThemeBlueDark'] {
+    .content {
+      background-color: var(--blue-dark);
+    }
+  }
+}
+
+.contentContainer {
+  flex: 1;
+  flex-direction: column;
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+}

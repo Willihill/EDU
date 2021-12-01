@@ -1,0 +1,40 @@
+.container {
+  border-radius: 25px;
+  padding: 2px 3px;
+  min-width: 50px;
+  cursor: pointer;
+  flex-direction: row;
+  justify-content: flex-start;
+  transition: ease .7s;
+
+  .slider {
+    transition: all .3s ease-in-out;
+    flex: 0;
+    justify-content: flex-end;
+
+    .ball {
+      background-color: var(--white);
+      width: 21px;
+      height: 21px;
+      border-radius: 50%;
+    }
+  }
+
+  &[toggle-active='true'] {
+    .slider {
+      flex: 1;
+    }
+  }
+
+  /***************************
+  ***** Styles of Themes *****/
+
+  /* Green Theme */
+  &[arial-theme='ToggleThemeGreen'] {
+    background-color: var(--gray-regular);
+
+    &[toggle-active='true'] {
+      background-color: var(--green);
+    }
+  }
+}

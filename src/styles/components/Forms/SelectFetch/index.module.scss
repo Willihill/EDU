@@ -1,0 +1,182 @@
+.container {
+  flex-direction: column;
+  align-items: stretch;
+  flex: 1;
+  position: relative;
+  width: 200px;
+
+  &[arial-disabled='true'] {
+    .control {
+      background-color: var(--background);
+      cursor: not-allowed;
+    }
+  }
+
+  .label {
+    font-size: 12px;
+    font-family: 'Roboto';
+    font-weight: 700;
+    color: var(--blue-dark);
+    margin-bottom: 5px;
+  }
+
+  .control {
+    flex: 1;
+    width: 100%;
+    border-radius: 6px;
+    border: solid 1px var(--input-border-color);
+    flex-direction: row;
+    height: 40px;
+    cursor: pointer;
+    background-color: var(--white);
+
+    &[arial-showmenu='true'] {
+      border-radius: 6px 6px 0 0 !important;
+      border-bottom-color: var(--background) !important;
+    }
+
+    .loadingHorizontal {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 10px;
+    }
+
+    .left {
+      flex: 1;
+      align-items: stretch;
+      border-radius: 6px;
+      overflow: hidden;
+
+      .placeholder {
+        color: var(--text);
+        font: 400 14px 'Roboto', sans-serif;
+        margin-left: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        white-space: nowrap;
+      }
+
+      .input {
+        flex: 1;
+        border: none;
+        outline: none;
+        color: var(--gray);
+        font: 400 14px 'Roboto', sans-serif;
+        padding-left: 15px;
+      }
+    }
+
+    .right, .actions {
+      align-items: center;
+      flex-direction: row;
+      padding-right: 13px;
+      margin-left: 10px;
+      gap: 12px;
+
+      .addIcon {
+        color: var(--gray);
+        font-size: 20px;
+        cursor: pointer;
+        margin-right: -2px;
+      }
+
+      .removeSelectedItem {
+        color: var(--red);
+        font-size: 18px;
+        cursor: pointer;
+        margin-right: -2px;
+      }
+
+      .refresh {
+        color: var(--gray);
+        font-size: 17px;
+        cursor: pointer;
+      }
+
+      .arrowDown {
+        color: var(--gray);
+        font-size: 25px;
+      }
+
+      .searchIcon {
+        color: var(--gray);
+        font-size: 15px;
+      }
+    }
+  }
+
+  .menu {
+    flex: 1;
+    min-width: 100%;
+    max-height: 200px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border-radius: 0 0 5px 5px;
+    border: solid 1px var(--input-border-color);
+    border-top-color: var(--background) !important;
+    overflow: hidden;
+    background-color: var(--white);
+    z-index: 1;
+
+    .menuAux {
+      flex: 1;
+      padding: 20px 30px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .scroll {
+      flex-direction: column;
+      overflow: hidden auto;
+      flex: 1;
+
+      .rowItem {
+        flex: 1;
+        flex-direction: column;
+
+        .option {
+          padding: 8px 15px;
+          transition: linear .15s;
+          font: 400 14px 'Roboto', sans-serif;
+          font-size: 11px;
+          color: var(--gray-dark);
+          user-select: none;
+          cursor: pointer;
+          justify-content: space-between;
+          align-items: center;
+
+          .iconEdit {
+            font-size: 13px;
+            box-sizing: content-box;
+            color: var(--gray);
+            padding: 5px;
+            border-radius: 6px;
+            cursor: pointer;
+          }
+
+          &[arial-selected='true'] {
+            border: solid 1px var(--purple);
+            color: var(--purple);
+
+            .iconEdit {
+              background-color: var(--purple);
+              color: var(--white);
+            }
+          }
+
+          &[arial-selected='false']:hover {
+            background-color: var(--background);
+
+            .iconEdit {
+              background-color: var(--white);
+            }
+          }         
+        }
+      }
+    }
+  }
+}

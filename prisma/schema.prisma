@@ -1,0 +1,214 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id                            Int       @id       @default(autoincrement())
+  name                          String
+  login                         String    @unique
+  password                      String
+  cpf                           Float     @unique
+  email                         String    @unique
+  phone                         Int?
+  birthday                      DateTime?
+  createdAt                     DateTime
+  admin                         Admin[]
+  students                      Student[]
+  teachers                      Teacher[]
+  classRoomSubjectMessages      ClassRoomSubjectMessage[]
+}
+
+model University {
+  id              Int       @id       @default(autoincrement())
+  companyName     String    @unique
+  fantasyName     String    @unique
+  document        String    @unique
+  token           String    @unique
+  admins          Admin[]
+  courses         Course[]
+  teachers        Teacher[]
+  teacherInvites  TeacherInvite[]
+}
+
+model Admin {
+  id            Int         @id       @default(autoincrement())
+  userId        Int
+  user          User        @relation(fields: [userId], references: [id])
+  universityId  Int
+  university    University  @relation(fields: [universityId], references: [id])
+}
+
+model Teacher {
+  id                      Int         @id       @default(autoincrement())
+  userId                  Int
+  user                    User        @relation(fields: [userId], references: [id])
+  universityId            Int
+  university              University  @relation(fields: [universityId], references: [id])
+  teacherInvites          TeacherInvite[]
+  coordinatorClassRooms   ClassRoom[]
+  classRoomSubjects       ClassRoomSubject[]
+}
+
+model Course {
+  id              Int       @id       @default(autoincrement())
+  name            String
+  duration        Int
+  universityId    Int
+  university      University @relation(fields: [universityId], references: [id])
+  classRooms      ClassRoom[]
+  courseSubjects  CourseSubject[]
+  @@unique([name,universityId])
+}
+
+model CourseSubject{
+  id                  Int       @id       @default(autoincrement())
+  name                String
+  courseId            Int
+  course              Course @relation(fields: [courseId], references: [id])
+  classRoomSubjects   ClassRoomSubject[]
+  @@unique([name,courseId])
+}
+
+model ClassRoom {
+  id              Int             @id       @default(autoincrement())
+  code            String
+  classToken      String          @db.VarChar(Max)
+  startDate       DateTime
+  courseId        Int
+  course          Course          @relation(fields: [courseId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  coordinatorId   Int
+  coordinator     Teacher         @relation(fields: [coordinatorId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  inviteStudents  StudentInvite[]
+  studants        Student[]
+  subjects        ClassRoomSubject[]
+
+  @@unique([code, courseId])
+}
+
+model ClassRoomSubject {
+  id              Int               @id       @default(autoincrement())
+  semester        Int
+  classRoomId     Int
+  classRoom       ClassRoom         @relation(fields: [classRoomId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  courseSubjectId Int
+  courseSubject   CourseSubject     @relation(fields: [courseSubjectId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  teacherId       Int
+  teacher         Teacher           @relation(fields: [teacherId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  tasks           Task[]
+  classes         ClassRoomClass[]
+  messages        ClassRoomSubjectMessage[]
+}
+
+model ClassRoomSubjectMessage {
+  id                  Int               @id       @default(autoincrement())
+  message             String            @db.VarChar(Max)
+  sendAt              DateTime
+  classRoomSubjectId  Int
+  classRoomSubject    ClassRoomSubject  @relation(fields: [classRoomSubjectId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  userId              Int
+  user                User              @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model ClassRoomClass {
+  id                    Int               @id       @default(autoincrement())
+  weekNumber            Int
+  weekDay               Int
+  date                  DateTime
+  startAt               String
+  endAt                 String
+  classRoomSubjectId    Int
+  classRoomSubject      ClassRoomSubject @relation(fields: [classRoomSubjectId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model Task {
+  id                  Int       @id       @default(autoincrement())
+  viewAnswer          Boolean
+  deadline            DateTime
+  startline           DateTime
+  description         String
+  classRoomSubjectId  Int
+  classRoomSubject    ClassRoomSubject @relation(fields: [classRoomSubjectId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  taskItems           TaskItem[]
+}
+
+model TaskItem {
+  id                    Int       @id       @default(autoincrement())
+  title                 String
+  isRequireActive       Boolean
+  typeOptionQuestion    Int    //1 - Radio, 2- Checkbox, 3 - shortResp, 4 - paragraph
+  text                  String
+  number                Int
+  points                Float
+  answer                String
+  taskId                Int
+  task                  Task @relation(fields: [taskId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  taskItemImages        TaskItemImage[]
+  taskItemOptions       TaskItemOption[]
+  taskItemResponse      TaskItemResponse[]
+}
+
+model TaskItemOption {
+  id               Int       @id       @default(autoincrement())
+  letter           String
+  description      String
+  isCheckedProf    Boolean
+  isCheckedStudent Boolean?
+  taskItemId       Int
+  taskItem         TaskItem        @relation(fields: [taskItemId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model TaskItemImage {
+  id               Int       @id       @default(autoincrement())
+  image            String    @db.VarChar(Max)
+  taskItemId       Int
+  taskItem         TaskItem        @relation(fields: [taskItemId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model TaskItemResponse {
+  id               Int       @id       @default(autoincrement())
+  answer           String?
+  letter           String?
+  taskItemId       Int
+  taskItem         TaskItem        @relation(fields: [taskItemId], references: [id])
+  studentId        Int
+  student          Student     @relation(fields: [studentId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model Student {
+  id                Int         @id       @default(autoincrement())
+  userId            Int
+  user              User        @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  classRoomId       Int
+  classRoom         ClassRoom   @relation(fields: [classRoomId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  inviteStudents    StudentInvite[]
+  taskItemResponses  TaskItemResponse[]
+}
+
+model StudentInvite {
+  id            Int         @id       @default(autoincrement())
+  acceptDate    DateTime?
+  cpf           Float
+  studentId     Int?
+  student       Student?     @relation(fields: [studentId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  classRoomId   Int
+  classRoom     ClassRoom   @relation(fields: [classRoomId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  @@unique(fields: [cpf, classRoomId])
+}
+
+model TeacherInvite {
+  id            Int         @id       @default(autoincrement())
+  acceptDate    DateTime?
+  cpf           Float       @unique
+  teacherId     Int?
+  teacher       Teacher?     @relation(fields: [teacherId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  universityId  Int
+  university    University   @relation(fields: [universityId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}

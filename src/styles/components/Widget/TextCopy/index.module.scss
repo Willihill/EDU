@@ -1,0 +1,22 @@
+.container {
+  gap: 15px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: solid 1px var(--purple);
+  align-items: center;
+  cursor: pointer;
+
+  span {
+    font-size: 13px;
+    color: var(--purple);    
+    user-select: none;
+  }
+
+  .icon {
+    font-size: 20px;
+    color: var(--purple);
+  }
+}

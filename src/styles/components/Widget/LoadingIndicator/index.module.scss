@@ -1,0 +1,40 @@
+.loader {
+  border: 2px solid rgba(255, 255, 255, .1);
+  border-top: 2px solid var(--white);
+  border-radius: 50%;
+  width: 17px;
+  height: 17px;
+  animation: spin 1.2s linear infinite;
+
+  /***************************
+  ***** Styles of Themes *****/
+
+  /* Blue Dark */
+  &[arial-theme='LoadingIndicatorThemeBlueDark'] {
+    border-color: var(--gray-light);
+    border-top-color: var(--blue-dark);
+  }
+
+  /* Blue Light */
+  &[arial-theme='LoadingIndicatorThemeBlueLight'] {
+    border-color: var(--gray-light);
+    border-top-color: var(--blue-light);
+  }
+
+  /* Gray */
+  &[arial-theme='LoadingIndicatorThemeGray'] {
+    border-color: var(--gray-light);
+    border-top-color: var(--gray);
+  }
+
+  /* White */
+  &[arial-theme='LoadingIndicatorThemeWhite'] {
+    border-color: var(--gray-dark);
+    border-top-color: var(--white);
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

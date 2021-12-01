@@ -1,0 +1,31 @@
+.container {
+  background-color: #f8f9fd;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: row;
+
+  .navmenu {
+    background-color: transparent;
+  }
+
+  .content {
+    flex: 1;
+    padding: 0 5px 5px 0;
+    flex-direction: column;
+
+    .contentHeader {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 10px;
+    }
+    
+    .children {
+      flex: 1;
+      background-color: var(--white);
+      border-radius: 30px 10px 10px 30px;
+      overflow: hidden;
+      box-shadow: 0 0 50px rgba(0, 0, 0, .1);
+    }
+  }
+}

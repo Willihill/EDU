@@ -1,0 +1,29 @@
+.container {
+  flex: 1;
+  flex-direction: column;
+
+  .header {
+    padding: 25px 30px 20px 30px;
+    background-color: var(--gray-light);
+    flex-direction: column;
+    gap: 15px;
+
+    .bottomHeader {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+  }
+  
+  .content {
+    flex: 1;
+    padding: 20px 30px;
+    background-color: var(--white);
+    flex-direction: column;
+
+    .addMaterial {
+      margin-top: 5px;
+      gap: 20px;
+    }
+  }
+}

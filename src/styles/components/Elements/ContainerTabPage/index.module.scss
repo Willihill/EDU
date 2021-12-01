@@ -1,0 +1,122 @@
+.container {
+  flex: 1;
+  flex-direction: column;
+
+  .header {
+    flex-direction: row;
+    padding: 0 0 0 30px;
+    justify-content: center;
+
+    .tabs {
+      flex: 1;
+
+      .tab {
+        align-items: center;
+        margin-right: 5px;
+        padding: 8px 10px;
+        cursor: pointer;
+        user-select: none;
+        border-bottom: solid 2px transparent;
+
+        &[arial-disabled='true'] {
+          cursor: not-allowed;
+        }
+
+        > span {
+          font-size: 14px;
+          margin: 0;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .rigthContent {
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  }
+
+  .content {
+    background-color: var(--white);
+    flex: 1;
+    border-radius: 10px 10px 0px 0px;
+  }
+
+  &[arial-content-padding='true'] {
+    .content {
+      padding: 30px;
+    }
+  }
+
+  /***************************
+  ***** Styles of Themes *****/
+
+  /* White */
+  &[arial-theme='ContainerTabPageThemeWhite'] {
+    .header {
+      .tabs {
+        .tab {
+          // background-color: var(--gray-regular);
+
+          h1 {
+            color: var(--white);
+          }
+        }
+
+        .tab[arial-tab-selected='true'] {
+          // background-color: var(--white) !important;
+          border-bottom-color: var(--purple);
+
+          h1 {
+            color: var(--blue-dark) !important;
+          }
+        }
+      }
+    }
+  }
+
+  /* Gray */
+  &[arial-theme='ContainerTabPageThemeGray'] {
+    .header {
+      .tabs {
+        .tab {
+          background-color: var(--border-color);
+
+          h1 {
+            color: var(--gray);
+          }
+        }
+
+        .tab[arial-tab-selected='true'] {
+          background-color: var(--gray) !important;
+
+          h1 {
+            color: var(--white) !important;
+          }
+        }
+      }
+    }
+  }
+
+  /* Purple */
+  &[arial-theme='ContainerTabPageThemePurple'] {
+    .header {
+      .tabs {
+        .tab {
+          span {
+            color: var(--gray);
+          }
+        }
+
+        .tab[arial-tab-selected='true'] {
+          border-bottom-color: var(--purple);
+
+          span {
+            color: var(--black) !important;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+}

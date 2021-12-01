@@ -1,0 +1,76 @@
+.container {
+  flex-direction: column;
+
+  .button {
+    border: none;
+    padding: 0 15px;
+    min-width: 320px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    height: 50px;
+
+    > span {
+      font: 700 14px 'Roboto';
+      user-select: none;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: .7;
+    }
+
+    /***************************
+    ***** Styles of Themes *****/
+
+    /* Blue Dark Theme */
+    &[arial-theme='ButtonThemeBlueDark'] {
+      background-color: #333269;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+
+      > span {
+        color: var(--white);
+      }
+    }
+
+     /* Blue Light Theme */
+     &[arial-theme='ButtonThemeBlueLight'] {
+      background-color: var(--blue-light);
+
+      > span {
+        color: var(--white);
+      }
+    }
+
+    /* Gray Theme */
+    &[arial-theme='ButtonThemeGray'] {
+      background-color: var(--gray-light);
+
+      > span {
+        color: var(--black);
+      }
+    }
+
+    /* Red Theme */
+    &[arial-theme='ButtonThemeRed'] {
+      background-color: var(--red);
+
+      > span {
+        color: var(--white);
+      }
+    }  
+    
+    &[arial-theme='ButtonThemeWhite'] {
+      background-color: white;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+      border: 1px solid #333269;
+
+      > span {
+        color: #333269;
+      }
+    }  
+  }
+}

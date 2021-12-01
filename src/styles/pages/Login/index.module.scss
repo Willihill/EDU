@@ -1,0 +1,113 @@
+.container {
+  flex: 1;
+  background-color: rgba(41, 50, 65, 0.05);
+  flex-direction: row;
+  
+  > section {
+    display: flex;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+
+    &:first-of-type {
+      flex: .4;
+    }
+
+    .form {
+      flex: 1;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 0 0 60px;
+      z-index: 1;
+
+      .header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        margin-bottom: 56px;
+        color: var(--blue-dark);
+
+        .title {
+          font-size: 50px;
+          color: var(--purple);
+        }
+
+        .message {
+          font-size: 14px;
+          color: var(--purple);
+        }
+      }
+
+      .inputs {
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .complement {
+        margin-top: 10px;
+        margin-bottom: 65px;
+        justify-content: space-between;
+        align-items: center;
+
+        .forgoutPassowrd {
+          color: var(--orange);
+        }
+      }
+    }
+
+    .formVector {
+      position: absolute;
+      top: 0;
+      bottom: 40%;
+      left: 0;
+      right: 10%;
+      background: url('/assets/images/login-vector-abstract-single.svg') no-repeat center;
+      background-size: 100% 100%;
+      z-index: 0;
+    }
+
+    .logo {
+      z-index: 1;
+    }
+
+    &.artVector {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+
+      .vectors {
+        width: 100%;
+        // position: relative;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+
+        .vector {
+          position: absolute;
+          z-index: 0;
+          right: 0;
+          bottom: 0;
+          width: 80%;
+        }
+
+        .vector2 {
+          position: absolute;
+          z-index: 0;
+          right: 0;
+          bottom: 0;
+          width: 80%;
+        }
+
+        .vector3 {
+          position: absolute;
+          z-index: 0;
+          right: 15%;
+          width: 50%;
+        }
+      }
+
+    }
+  }
+}

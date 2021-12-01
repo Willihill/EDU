@@ -1,0 +1,117 @@
+.container {
+  align-items: center;
+  flex-direction: column;
+  width: 950px;
+  
+  .main {
+    height: 80px;
+    width: 950px;
+    border-radius: 0 0 15px 15px;
+    align-items: center ;
+    padding: 20px;
+    background: white;
+    
+
+    .formHeader{
+      gap:20px;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      justify-content: space-between;
+
+      h3 {
+        font: 400 20px 'Roboto';
+      }
+    
+      .divider{
+        font-size: 40px;
+        font-weight: 100;
+        border: none;
+        color: rgba(7, 7, 7, 0.411);
+      }
+    
+      .prazoEntrega {
+        align-items: center;
+        height: 50px;
+        width: 290px;
+
+        .InputDate{
+          margin-left: 10px;
+          width: 110px;
+        }
+    
+        p {
+          margin-right: 10px;
+        }
+    
+        .calendar{
+          margin: 0;
+          border:none;
+          &:focus{
+            outline: none;
+          }
+          background: rgba(231, 229, 228, 0.507);
+          font-size: 1rem;
+          padding: 5px;
+        }
+    
+        .dividerDate {
+          font-size: 1.7rem;
+          margin-left: 5px;
+        }
+      }
+
+      .viewResult{
+        align-items: center;
+
+        .check{
+          margin-left: 7px;
+          width: 18px;
+          height: 18px;
+          cursor: pointer;
+        }
+      }
+
+      .btn {
+        border: none;
+        width: 150px;
+        height: 35px;
+        cursor: pointer;
+        background: rgb(117, 50, 226);
+        border-radius: 10px;
+        color: white;
+        &:hover {
+          background: rgb(141, 77, 243);
+        }
+      }
+    } 
+  }
+  .descriptionForm{
+    width: 900px;
+    background: white;
+    border-radius: 10px;
+    padding: 5px;
+    align-items: center;
+    border-top: 7px solid rgba(19, 10, 151, 0.692);
+    margin-top: 20px;
+
+    .textAreaTitulo{
+      font: 500 22px 'Roboto';
+      width: 870px;
+      height: 30px;
+      margin: 10px;
+      border-bottom: 1px solid ;
+      border: none;
+      resize:none;
+      overflow-y: hidden;
+      outline: 0;
+        
+      &:focus{
+        border-bottom: 2px solid rgba(117, 50, 226, 0.61) ;
+      }
+      &:hover{
+        border-bottom: 2px solid rgba(117, 50, 226, 0.61) ;
+      }
+    }
+  }
+}

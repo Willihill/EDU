@@ -1,0 +1,43 @@
+.container {
+  padding: 15px 30px;
+  background-color: var(--purple);
+  border-radius: 10px;
+  flex-direction: column;
+  user-select: none;
+  transition: ease-in-out .3s;
+
+  .lineIcon {
+    flex: 1;
+    justify-content: flex-end;
+
+    .icon {
+      margin-left: 180px;
+      font-size: 80px;
+      color: var(--white);
+      text-shadow: 0 2px 5px var(--gray-regular);
+    }
+  }
+
+  .lineInfo {
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .title {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--gray-light);
+    }
+
+    .amount {
+      font-size: 50px;
+      font-weight: 900;
+      color: var(--white);
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 20px 15px var(--gray-regular);
+    transform: scale(1.12);
+  }
+}

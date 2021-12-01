@@ -1,0 +1,80 @@
+.container {
+  border: solid 1px var(--purple);
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0 10px;
+  flex-direction: column;
+  gap: 10px;
+
+  .header {
+    gap: 15px;
+    align-items: center;
+
+    .icon {
+      font-size: 15px;
+      color: var(--purple);
+      cursor: pointer;
+    }
+
+    .title {
+      font-size: 16px;
+      color: var(--gray-dark);
+    }
+  }
+
+  .days {
+    flex: 1;
+    flex-direction: row;
+    gap: 20px;
+    overflow: auto auto;
+    padding-bottom: 10px;
+
+    .dayContainer {
+      flex: 1;
+      border: solid 1px var(--gray-regular);
+      padding: 10px;
+      border-radius: 10px;
+      flex-direction: column;
+      user-select: none;
+      gap: 20px;
+
+      .dayHeader {
+        min-width: 421px;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--gray-dark);
+
+        .dayName {
+          font-size: 14px;
+        }
+
+        .date {
+          font-size: 12px;
+        }
+
+        .addClassIcon {
+          font-size: 18px;
+          color: var(--purple);
+          cursor: pointer;
+        }
+      }
+
+      .classes {
+        flex-direction: column;
+        gap: 5px;
+
+        .classContainer {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          gap: 5px;
+        }
+      }
+    }
+
+  }
+  
+  &:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+  }
+}

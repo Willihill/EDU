@@ -1,0 +1,41 @@
+.container {
+  flex: 1;
+  flex-direction: column;
+
+  .header {
+    padding: 25px 30px 20px 30px;
+    background-color: var(--gray-light);
+    flex-direction: column;
+    gap: 15px;
+
+    .bottomHeader {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 20px;
+
+      .bottomHeaderContent {
+        flex: 1;
+        gap: 10px;
+      }
+    }
+  }
+  
+  .content {
+    flex: 1;
+    padding: 20px 30px;
+    background-color: var(--white);
+    flex-direction: column;
+
+    .newMessage {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .feedMessages {
+      flex: 1;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+}

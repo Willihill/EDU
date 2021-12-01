@@ -1,0 +1,33 @@
+.container {
+  padding: 10px 15px;
+  border: solid 1px var(--gray-regular);
+  border-radius: 10px;
+  flex-direction: column;
+  gap: 15px;
+
+  .owner {
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+
+    .ownerInfo {
+      flex-direction: column;
+      justify-content: center;
+
+      .ownerName {
+        font-size: 18px;
+        color: var(--purple);
+      }
+
+      .sendAt {
+        font-size: 10px;
+        color: var(--gray);
+      }
+    }
+  }
+
+  .message {
+    font-size: 16px;
+    color: var(--black);
+  }
+}

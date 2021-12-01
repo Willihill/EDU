@@ -1,0 +1,152 @@
+.container {
+  width: 100%;
+  flex-direction: column;
+
+  .question{
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+    border-radius: 10px;
+    width: 800px;
+    background: white;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.4);
+
+    .component{
+      flex-direction: column;
+      align-items: center;
+      width: 700px;
+
+      .questionRadioCheck {
+        align-items: center;
+        
+        .radioOrCheck{
+          border: none;
+          width: 18px;
+          height: 18px;
+        }
+
+        .textarea{
+          width: 650px;
+          border: none;
+          margin-left: 10px;
+          // font-size: 1rem;
+          font: 400 15px 'Roboto';
+        }
+      }
+    }
+
+    .image{
+      max-width: 600px;
+      max-height: 500px;
+      margin: 15px 0 20px 0;
+    }
+
+    .questionRequired{
+      margin-top: 20px;
+      width: 700px;
+      align-items: center;
+
+      .imgRequire{
+        width: 8px;
+        height: 8px;
+      }
+
+      .require {
+        margin-left: 10px;
+      }
+    }
+
+    .numberWithQuestion{
+      margin-top: 30px;
+      align-items: center;
+      max-width: 700px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(252, 50, 50, 0.288);
+
+      .questionRequiredd{
+        margin-right: 20px;
+        // top: 0;
+        position: absolute;
+        align-items: center;
+
+        .imgRequiree{
+          width: 8px;
+          height: 8px;
+        }
+  
+        .requiree {
+          margin-left: 10px;
+        }
+      }
+
+      .number{
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        background: var(--purple);
+        // margin-bottom: 10px;
+        color: white;
+        font-size: 1.2rem;
+        // position: absolute;
+      }
+
+      .titleQuestion{
+        font: 400 16px 'Roboto';
+        width: 700px;
+        font-weight: 600;
+        margin-top: 7px;
+        margin-left: 20px;
+
+        .spanRequire{
+          margin-left: 10px;
+          font-size: 20px;
+          color: red;
+        }
+      }
+
+      .nota {
+        position: absolute;
+        margin-left: 680px;
+        font-size: 13px;
+        top: 0;
+        color: rgba(0, 0, 0, 0.637);
+      }
+    }
+
+    .imgQuestion{
+      margin: 20px 0;
+      max-width: 600px;
+    }
+
+    .input{
+      padding: 15px;
+      // margin-top: 20px;
+      height: 50px;
+      width: 700px;
+      border: none;
+      background: rgb(253, 246, 240);
+      outline: 0;
+      &:focus{
+        border-bottom: 1px solid var(--orange);
+      }
+      font: 400 14px 'Roboto';
+    }
+
+    .textareaAnswer{
+      padding: 15px;
+      width: 700px;
+      border: none;
+      background: rgb(253, 246, 240);
+      outline: 0;
+      resize: none;
+      overflow: hidden;
+      &:focus{
+        border-bottom: 1px solid var(--orange);
+      }
+      font: 400 14px 'Roboto';
+    }
+  }
+}

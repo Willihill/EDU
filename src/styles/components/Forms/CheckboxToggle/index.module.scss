@@ -1,0 +1,15 @@
+.container {
+  flex-direction: column;
+
+  .toggle {
+    flex-direction: row;
+    align-items: center;
+
+    .label {
+      font-size: 14px;
+      font-weight: 700;
+      margin-left: 10px;
+      color: var(--blue-dark);
+    }
+  }
+}

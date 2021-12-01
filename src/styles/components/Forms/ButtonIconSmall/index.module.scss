@@ -1,0 +1,49 @@
+.container {
+  flex-direction: column;
+
+  .button {
+    background-color: var(--white);
+    border: none;
+    padding: 8px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    > span {
+      user-select: none;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: .7;
+    }
+
+    /***************************
+    ***** Styles of Themes *****/
+
+    /* Blue Dark Theme */
+    &[arial-theme='ButtonIconSmallBlueDark'] {
+      .label, .icon {
+        color: var(--blue-dark);
+      }
+    }
+
+    /* Green Theme */
+    &[arial-theme='ButtonIconSmallGreen'] {
+      .label, .icon {
+        color: var(--green);
+      }
+    }
+
+    /* Green White Theme */    
+    &[arial-theme='ButtonIconSmallGreenWhite'] {
+      background-color: var(--green) !important;
+      .label, .icon {
+        color: var(--white);
+      }
+    }
+  }
+}

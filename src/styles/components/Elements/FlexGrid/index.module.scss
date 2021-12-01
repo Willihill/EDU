@@ -1,0 +1,148 @@
+.container {
+  flex: 1;
+  flex-direction: column;
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+
+  .table {
+    border-collapse: collapse;
+    text-align: left;
+
+    tr td:not(:nth-child(1)), tr th:not(:nth-child(1)) {
+      padding-left: 25px !important;
+    }
+
+    tr td:nth-child(1), tr th:nth-child(1) {
+      padding-left: 15px !important;
+    }
+
+    tr td:first-of-type {
+      border-radius: 10px 0 0 10px;
+    }
+
+    tr td:last-of-type {
+      border-radius: 0 10px 10px 0;
+    }
+
+    .headers {
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        padding-bottom: 15px;
+        white-space: nowrap;
+        border-bottom: solid 1px var(--border-color);
+        user-select: none;
+
+        &[arail-header-fixed='true'] {
+          right: 0;
+        }
+
+        &[arail-header-orderable='true'] {
+          cursor: pointer;
+        }
+
+        > span {
+          color: var(--purple);
+          font-size: 12px;
+          user-select: none;
+        }
+  
+        .iconOrder {
+          color: var(--gray);
+          margin-left: 8px;
+          font-size: 13px;
+        }
+      }
+    }
+
+    .body {
+      .row {
+        white-space: nowrap;
+        // border-bottom: solid 1px var(--border-color);
+        cursor: pointer;
+
+        &:hover{
+          animation: linear 0.2s;
+        }
+
+        &[arial-active='false'] {
+          text-decoration: line-through;
+          opacity: .5;
+        }
+
+        .info {
+          color: black;
+          padding: 12px 0;
+
+          &[arail-header-fixed='true'] {
+            position: sticky;
+            right: 0;
+          }
+
+          > span {
+            color: var(--gray);
+            font-size: 14px;
+            font-weight: 400;
+          }
+
+        }
+      }
+
+    }
+    
+    /***************************
+    ***** Styles of Themes *****/
+
+    /* White */
+    &[arial-theme='FlexGridWhite'] {
+      .headers {
+        .header {
+          background-color: var(--white);
+        }
+      }
+
+      .body {
+        .row:hover {
+          .info {
+            background-color: var(--background) !important;
+
+            &[arail-header-fixed='true'] {
+              background-color: var(--white);
+            }
+          }
+        }
+      }
+    }
+
+    /* Dark Blue */
+    &[arial-theme='FlexGridBlueDark'] {
+      .headers {
+        .header {
+          background-color: var(--blue-dark);
+        }
+      }
+
+      .body {
+        .row {
+          .info {
+            > span {
+              color: var(--white);
+            }
+
+            &[arail-header-fixed='true'] {
+              background-color: var(--blue-dark);
+            }
+          }
+
+          &:hover {
+            .info {
+              background-color: rgba(0, 0, 0, .2) !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

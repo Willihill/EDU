@@ -1,0 +1,136 @@
+
+.container {
+  flex: 1;
+  background: white;
+  
+  > section {
+    display: flex;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+
+    &:first-of-type {
+      flex: .7;
+    }
+
+    .form {
+      padding-left: 70px;
+      align-items: center;
+      flex: 1;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 1;
+
+      .header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        margin-bottom: 56px;
+        color: var(--blue-dark);
+
+        .title {
+          font-size: 50px;
+          color: var(--purple);
+        }
+
+        .message {
+          font-size: 14px;
+          color: var(--purple);
+        }
+      }
+
+      .inputs {
+        gap: 30px;
+
+        .left {
+          flex-direction: column;
+         
+          .input1{
+            position: relative;
+            margin-top: 20px;
+            .icon {
+              position: absolute;
+              right: 10px;
+              bottom: 10px;
+            }
+          }
+        }
+        
+        .right {
+          flex-direction: column;
+         
+          .input2{
+            margin-top: 20px;
+            position: relative;
+            .icon {
+              position: absolute;
+              right: 10px;
+              bottom: 10px;
+            }
+          }
+        }
+      }
+
+      .btn{
+        margin-top: 50px;
+        gap: 30px;
+      }
+    }
+
+    .formVector {
+      position: absolute;
+      top: 0;
+      bottom: 45%;
+      right: 0;
+      left: 45%;
+      background: url('/assets/images/cadastroUser/vector-3.svg') no-repeat center;
+      background-size: 100% 100%;
+      z-index: 0;
+    }
+
+    .logo {
+      z-index: 1;
+      margin-left: 150px;
+    }
+
+    &.artVector {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+
+      .vectors {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+
+        .vector {
+          position: absolute;
+          z-index: 0;
+          left: 0;
+          bottom: 0;
+          width: 90%;
+        }
+
+        .vector2 {
+          position: absolute;
+          z-index: 0;
+          left: 0;
+          bottom: 0;
+          width: 80%;
+        }
+
+        .vector3 {
+          position: absolute;
+          z-index: 0;
+          left: 10%;
+          // height: 60%;
+          width: 70%;
+        }
+      }
+    }
+
+  }
+}

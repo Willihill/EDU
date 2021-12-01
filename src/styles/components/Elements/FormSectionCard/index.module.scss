@@ -1,0 +1,452 @@
+.formSection{
+  position: relative;
+  width: 900px;
+  margin: 10px 20px;
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  flex-direction: column;
+  border-left: 7px solid rgba(65, 68, 240, 0.692);;
+
+  .config1{
+    margin: 10px 0;
+
+    .textAreaQuestion{
+      margin-left: 10px;
+      // height: 60px;
+      padding: 10px;
+      border:none;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.24);
+      background: rgba(238, 237, 236, 0.788);
+      width: 560px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      resize: none;
+      overflow: hidden;
+      outline: 0;
+
+      &:focus{
+        border-bottom: 3px solid rgba(117, 50, 226, 0.61) ;
+      }
+    }
+
+    .imgRequire{
+      height: 12px;
+      width: 12px;
+      margin-left: 760px;
+      position: absolute;
+    }
+
+    .sectionAddImage{
+      // align-items: center;
+      // justify-content: center;
+      // position: absolute;
+      margin-top: 10px;
+     
+      .labelImg{
+        margin-left:20px;
+        flex-direction: column;
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+        
+        .addImg{
+          height: 22px;
+          width: 20px;
+          &:hover{
+            height: 23px;
+            width: 23px;
+          }
+          
+        }
+  
+        >input{
+          display: none;
+          //width: 30px;
+        
+        }
+      }
+    }
+
+    .caixa{
+      border: 1px solid rgba(0, 0, 0, 0.24);
+      border-radius: 5px;
+      width: 220px;
+      height: 50px;
+      margin-left:10px;
+    }
+    
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      margin-left:10px;
+     
+      .actualOption {
+        background: white;
+        color: rgb(7, 7, 7);
+        font-size: 16px;
+        width: 240PX;
+        border: 1px solid rgba(22, 21, 21, 0.274);
+        border-radius: 10PX;
+        padding: 5px;
+        height: 40px;
+        align-items: center;
+        cursor: pointer;
+
+
+        .imgActual{
+          width: 20px;
+          height: 20px;
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+        .imgShortActual{
+          width: 40px;
+          height: 30px;
+          margin-right: 10px;
+        }
+        .imgRadioActual{
+          width: 23px;
+          height: 23px;
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+
+        .iconCaretDown{
+          position: absolute;
+          right: 20px;
+          width: 15px;
+          height: 9px;
+        }
+      }
+      /* Dropdown Content (Hidden by Default) */
+      .dropdownContent {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+
+        .optionDrop{
+          align-items: center;
+          justify-content: center;
+          width: 240px;
+          padding: 10px;
+          height: 50px;
+          z-index: 5;
+          display: block;
+          cursor: pointer;
+          &:hover{
+            background:rgba(0, 0, 0, 0.137)
+          }
+
+          .imgDrop{
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+          }
+          .imgShortText{
+            width: 20px;
+            margin-right: 10px;
+          }
+        }
+
+        .diviser{
+          border-bottom: 1px solid rgba(22, 21, 21, 0.274);
+        }
+
+        .optionNota{
+          align-items: center;
+          padding: 10px;
+          height: 50px;
+
+          .inputNota{
+            text-align: center;
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 50px;
+            background-color: #f1f1f1;
+            height: 30px;
+            right: 0;
+            font-size: 1.1rem;
+            border: none;
+            border-bottom: 1px solid;
+            &:focus{
+              outline: 0;
+            }
+          }
+        }
+      }
+    
+    }
+    
+    /* Change color of dropdown links on hover */
+    .dropdownContent a:hover {background-color: #ddd;}
+    
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdownContent {display: block;}
+  }
+
+  .questionSection{
+    flex-direction: column;
+    width: 730px;
+
+    .imgSelected{
+      justify-content: center;
+      padding: 10px;
+      position: relative;
+      flex-direction: column;
+    
+      .imgClose{
+        position: absolute;
+        right: 70px;
+        top: 20px;
+        cursor: pointer;
+      }
+      .imgPreview{
+        margin-top: 10px;
+        max-height: 600px;
+        max-width: 600px;
+        width: auto;
+        height: auto;
+      }
+    }
+  }
+  .radioOrCheck{
+    flex-direction: column;
+    
+    .spanSelectOption{
+      font-size: 1.1rem;
+      margin-right: 5px;
+      font-weight: 100;
+    }
+
+    .option{
+      margin: 10px;
+      align-items: center;
+
+      .radioOrCheckOption{
+        width: 18px;
+        height: 18px;
+      }
+
+      .textAreaOption{
+        width: 640px;
+        margin-left: 10px;
+        margin-right: 10px;
+        border: none;
+        height: 30px;
+        border-bottom: 1.8px solid rgba(117, 50, 226, 0.212);
+        font-size: 1.1rem;
+        outline: 0;
+        resize: none;
+        overflow: hidden;
+        
+        &:focus{
+          border-bottom: 1.8px solid rgba(117, 50, 226, 0.61);
+        }
+        &:hover{
+          border-bottom: 1.8px solid rgba(117, 50, 226, 0.61);
+        }
+      }
+
+      .imgRemoveOption{
+        margin-left: 5px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .textRespText{
+    width: 704px;
+    font-size: 1rem;
+    height: 35px;
+    margin: 20px;
+    border: none;
+    resize: none;
+    color: rgba(0, 0, 0, 0.596);
+    border-bottom: 1.8px solid rgba(117, 50, 226, 0.164);
+    outline: 0;
+  }
+
+  .imgAddOption{
+    width: 30px;
+    height: 30px;
+    margin: 10px 15px;
+    cursor: pointer;
+  }
+
+  .sectionNota{
+    position: absolute;
+    margin-right: 10px;
+    width: 35px;
+    height: 30px;
+    right: 0;
+    font-size: 1.3rem;
+    border: none;
+    border-bottom: 1px solid;
+    &:focus{
+      outline: 0;
+    }
+  }
+
+  .config3{
+    margin-top: 10px;
+    justify-content: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.24);
+    align-items: center;
+
+    .endResp{
+      width: 600px;
+      height: 10px;
+      align-items: center;
+      font-size: 0.9rem;
+      color: rgb(153, 150, 148);
+
+      .resp{
+        margin-left: 5px;
+      }
+
+      .checkResp{
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    .endConfig{
+      align-items: center;
+      width: 320px;
+      right:0;
+      margin-top: 10px;
+      padding-left: 30px;
+
+      .img{
+        margin-right: 25px;
+        width: 19px;
+        height: 24px;
+        cursor: pointer;
+      }
+      .imgPlus{
+        margin-right: 25px;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+      }
+
+      .toggleContaine {
+        position: relative;
+        display: inline-block;
+        // width: 80px;
+        // height: 40px;
+        width: 60px;
+        height: 30px;
+        pointer-events: none;
+        margin-left: 10px;
+
+        .inputToggle {
+          opacity: 0;
+          width: 100%;
+          height: 100%;
+          pointer-events: all;
+        }
+
+        .slider {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          cursor: pointer;
+          background-color: #808080;
+          transition: 0.4s;
+          pointer-events: none;
+        }
+
+        .slider::before {
+          content: "";
+          position: absolute;
+          // height: 24px;
+          // width: 24px;
+          height: 20px;
+          width: 20px;
+          left: 8px;
+          bottom: 6px;
+          background-color: #fff;
+          transition: 0.2s;
+          pointer-events: none;
+        }
+
+        .slider::after {
+          position: absolute;
+          // content: "off";
+          height: 20px;
+          width: 20px;
+          right: 10px;
+          bottom: 6px;
+          transition: 0.2s;
+          pointer-events: none;
+          color: #fff;
+        }
+
+        .inputToggle:checked + .slider {
+          background-color: #2195f393;
+        }
+
+        .inputToggle:checked + .slider:before {
+          transform: translateX(25px);
+        }
+
+        .inputToggle:checked + .slider:after {
+          // content: "on";
+          left: 8px;
+        }
+
+        .slider{
+          border-radius: 34px;
+        }
+        
+        .slider:before {
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+  .textarea {
+    // min-height: 20px;
+    // border: none;
+    // border-bottom: 1px solid #ccc;
+    // font-family: inherit;
+    // font-size: inherit;
+    // padding: 1px 6px;
+    // &:focus {
+    //   outline: none;
+    // }
+
+    display: block;
+    // overflow: hidden;
+    // resize: both;
+    min-height: 25px;
+    // line-height: 20px;
+
+    width: 640px;
+        // height: 30px;
+        margin-left: 10px;
+        margin-right: 10px;
+        border: none;
+        border-bottom: 1.8px solid rgba(117, 50, 226, 0.212);
+        font-size: 1.1rem;
+        outline: 0;
+        resize: none;
+        overflow: hidden;
+        &:focus{
+          border-bottom: 1.8px solid rgba(117, 50, 226, 0.61);
+        }
+        &:hover{
+          border-bottom: 1.8px solid rgba(117, 50, 226, 0.61);
+        }
+  }
+}
+  
